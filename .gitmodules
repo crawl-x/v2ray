@@ -2,6 +2,6 @@
     path = sing-box
     url = git://github.com/SagerNet/sing-box
 
-[submodule "sing-box"]
-    path = sing-box
-    url = git://github.com/SagerNet/sing-box
+[submodule "serenity"]
+    path = serenity
+    url = git://github.com/SagerNet/serenity
