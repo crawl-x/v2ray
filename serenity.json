@@ -1,0 +1,102 @@
+{
+  "cache_file": "serenity.db",
+  "listen": "0.0.0.0:8080",
+  "log": {
+    "level": "debug",
+    "timestamp": true
+  },
+  "profiles": [
+    {
+      "name": "servers",
+      "subscription": [
+        "azadi",
+        "tvc",
+        "0024",
+        "eternity"
+      ],
+      "template": "mix"
+    },
+    {
+      "name": "servers-lite",
+      "subscription": [
+        "azadi",
+        "tvc",
+        "eternity"
+      ],
+      "template": "mix"
+    }
+  ],
+  "subscriptions": [
+    {
+      "name": "azadi",
+      "process": [
+        {
+          "filter": [
+          ],
+          "filter_type": [
+            "http",
+            "shadowsocksr",
+            "socks"
+          ],
+          "remove": true
+        }
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/azadiazinjamigzare/SingBox@main/Sub"
+    },
+    {
+      "name": "tvc",
+      "process": [
+        {
+          "filter": [
+          ],
+          "filter_type": [
+            "http",
+            "shadowsocksr",
+            "socks"
+          ],
+          "remove": true
+        }
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/yebekhe/TVC@main/lite/subscriptions/singbox/mix.json"
+    },
+    {
+      "name": "0024",
+      "process": [
+        {
+          "filter": [
+          ],
+          "filter_type": [
+            "http",
+            "shadowsocksr",
+            "socks"
+          ],
+          "remove": true
+        }
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.txt"
+    },
+    {
+      "name": "eternity",
+      "process": [
+        {
+          "filter": [
+          ],
+          "filter_type": [
+            "http",
+            "shadowsocksr",
+            "socks"
+          ],
+          "remove": true
+        }
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
+    }
+  ],
+  "templates": [
+    {
+      "disable_default_rules": true,
+      "disable_traffic_bypass": true,
+      "name": "mix"
+    }
+  ]
+}

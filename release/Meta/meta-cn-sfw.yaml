@@ -1,0 +1,204 @@
+# Copyright (C) 2023-24 demarcush
+# License: AGPL-3.0-or-later (https://www.gnu.org/licenses/agpl.txt)
+# Repository: https://github.com/demarcush/breakfree
+## Software: Clash Meta
+## Country: China (Safe for Work)
+
+p: &p {type: http, interval: 86400, proxy: DIRECT, exclude-type: "http|socks5", exclude-filter: "AE|BG|BH|BY|IL|KZ|QA|RU|TR|VE|VN", health-check: {enable: true, interval: 3600, lazy: true, url: "https://www.youtube.com/generate_204", expected-status: 204}, override: {skip-cert-verify: false, udp: true}}
+
+r: &r {type: http, format: text, interval: 86400, proxy: DIRECT}
+
+allow-lan: true
+external-controller: '127.0.0.1:9090'
+external-ui: ./xd
+external-ui-name: xd
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
+find-process-mode: "always"
+geodata-mode: true
+geo-auto-update: true
+global-client-fingerprint: "random"
+ipv6: true
+log-level: "error" ## silent/error/warning/info/debug
+mixed-port: 7890
+mode: "rule"
+tcp-concurrent: true
+unified-delay: true
+
+profile:
+  store-fake-ip: true
+  store-selected: false
+
+ntp:
+  enable: false
+  write-to-system: false
+  server: "time.windows.com"
+
+tun:
+  enable: false
+  stack: "mixed" ## system/gvisor/mixed
+  dns-hijack:
+    - "any:53"
+  auto-route: true
+  strict-route: true
+  auto-detect-interface: true
+  gso: true
+  exclude-package:
+  - com.android.captiveportallogin
+  - com.biglybt.android.client
+  - com.bittorrent.client
+  - com.bittorrent.client.pro
+  - com.infomaniak.meet
+  - com.psiphon3
+  - com.psiphon3.subscription
+  - com.utorrent.client
+  - com.utorrent.client.pro
+  - ie.equalit.ceno
+  - org.jitsi.meet
+  - org.onionshare.android
+  - org.onionshare.android.fdroid
+  - org.openobservatory.ooniprobe
+  - org.proninyaroslav.libretorrent
+  - org.torproject.android
+  - org.torproject.torbrowser
+  - org.torproject.torbrowser_alpha
+  - pan.alexander.tordnscrypt
+  - pan.alexander.tordnscrypt.stable
+
+dns:
+  enable: true
+  listen: '127.0.0.1:1053'
+  ipv6: true
+  use-hosts: true
+  prefer-h3: true
+  default-nameserver:
+    - "tls://223.5.5.5:853"
+  proxy-server-nameserver:
+    - "https://1.1.1.1/dns-query"
+    - "https://8.8.4.4/dns-query"
+    - "tls://9.9.9.11:8853"
+    - "tls://223.5.5.5:853"
+  nameserver:
+    - "https://1.1.1.1/dns-query#default"
+    - "https://8.8.4.4/dns-query#default"
+    - "https://9.9.9.11:5053/dns-query#default"
+    - "https://185.222.222.222/dns-query#default"
+  nameserver-policy:
+    "geosite:private": "tls://223.5.5.5:853"
+    "geosite:cn": "tls://223.5.5.5:853"
+    "rule-set:category-ads-all,malware,phishing,cryptominers,nsfw": "rcode://refused"
+  fallback-filter:
+    geoip: false
+
+proxy-groups:
+
+- name: default
+  type: select
+  proxies:
+    - auto
+    - manual
+    - DIRECT
+    - REJECT
+
+- name: manual
+  type: select
+  include-all-providers: true
+
+- name: auto
+  #filter: "🏁|🏴‍☠️|🚩"
+  hidden: true
+  interval: 3600
+  lazy: true
+  type: url-test
+  url: "https://www.youtube.com/generate_204"
+  include-all-providers: true
+
+proxy-providers:
+
+  aggregator:
+    url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    path: "./providers/aggregator.yaml"
+    <<: *p
+
+  yebekhe:
+    url: "https://cdn.jsdelivr.net/gh/yebekhe/TVC@main/subscriptions/meta/mix"
+    path: "./providers/yebekhe.yaml"
+    <<: *p
+
+rule-providers:
+
+  ir:
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/ir.txt"
+    path: ./ruleset/ir.txt
+    <<: *r
+
+  ircidr:
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/ircidr.txt"
+    path: ./ruleset/ircidr.txt
+    <<: *r
+
+  apps:
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/apps.txt"
+    path: ./ruleset/apps.txt
+    <<: *r
+
+  category-ads-all:
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/category-ads-all.txt"
+    path: ./ruleset/category-ads-all.txt
+    <<: *r
+
+  cryptominers:
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/cryptominers.txt"
+    path: ./ruleset/cryptominers.txt
+    <<: *r
+
+  malware:
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/malware.txt"
+    path: ./ruleset/malware.txt
+    <<: *r
+
+  malware-ip:
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/malware-ip.txt"
+    path: ./ruleset/malware-ip.txt
+    <<: *r
+
+  nsfw:
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/nsfw.txt"
+    path: ./ruleset/nsfw.txt
+    <<: *r
+
+  phishing:
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/phishing.txt"
+    path: ./ruleset/phishing.txt
+    <<: *r
+
+  phishing-ip:
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/phishing-ip.txt"
+    path: ./ruleset/phishing-ip.txt
+    <<: *r
+
+rules:
+  - OR,((GEOSITE,private),(GEOIP,private,no-resolve)),DIRECT
+
+  - OR,((RULE-SET,category-ads-all),(RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers)),REJECT
+  - RULE-SET,nsfw,REJECT ## Pornography and gambling
+
+  - GEOSITE,cn,DIRECT
+  - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
+  #- GEOSITE,category-games,DIRECT ## Gaming
+
+  - GEOSITE,geolocation-!cn,default ## When all else failed, vote from the rooftops.
+
+  - OR,((RULE-SET,malware-ip),(RULE-SET,phishing-ip)),REJECT
+  - GEOIP,cn,DIRECT
+
+  - MATCH,default

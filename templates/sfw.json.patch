@@ -1,0 +1,14 @@
+24c24
+<         "address": "https://security.cloudflare-dns.com/dns-query",
+---
+>         "address": "https://family.cloudflare-dns.com/dns-query",
+185a186,192
+>         "tag": "geosite-nsfw",
+>         "type": "remote",
+>         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-nsfw.srs"
+>       },
+>       {
+>         "download_detour": "direct",
+>         "format": "binary",
+231a239
+>           "geosite-nsfw",

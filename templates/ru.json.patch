@@ -1,0 +1,28 @@
+29c29
+<         "address": "https://223.5.5.5/dns-query",
+---
+>         "address": "https://77.88.8.8/dns-query",
+151c151
+<         "tag": "geosite-cn",
+---
+>         "tag": "geosite-category-gov-ru",
+153c153
+<         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-cn.srs"
+---
+>         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-gov-ru.srs"
+158c158
+<         "tag": "geoip-cn",
+---
+>         "tag": "geoip-ru",
+160c160
+<         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-cn.srs"
+---
+>         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-ru.srs"
+238c238
+<           "geoip-cn",
+---
+>           "geoip-ru",
+240c240
+<           "geosite-cn",
+---
+>           "geosite-category-gov-ru",

@@ -1,0 +1,28 @@
+29c29
+<         "address": "https://223.5.5.5/dns-query",
+---
+>         "address": "tls://149.112.112.11:8853",
+151c151
+<         "tag": "geosite-cn",
+---
+>         "tag": "geosite-ir",
+153c153
+<         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-cn.srs"
+---
+>         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-ir.srs"
+158c158
+<         "tag": "geoip-cn",
+---
+>         "tag": "geoip-ir",
+160c160
+<         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-cn.srs"
+---
+>         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-ir.srs"
+238c238
+<           "geoip-cn",
+---
+>           "geoip-ir",
+240c240
+<           "geosite-cn",
+---
+>           "geosite-ir",
