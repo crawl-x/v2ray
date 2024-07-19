@@ -127,6 +127,7 @@
         "🇺🇸US | 🔴 | vless | @vmessorg | 10",
         "🇺🇸US | 🔴 | vless | @v2rayNG_Matsuri | 8",
         "🇺🇸US | 🔴 | vless | @v2rayNG_Matsuri | 9",
+        "🇷🇺RU | 🔴 | vless | @ShadowProxy66 | 16",
         "🇺🇸US | 🔴 | vless | @ShadowProxy66 | 17",
         "🇸🇪SE | 🔴 | vless | @ServerNett | 2",
         "🇸🇪SE | 🔴 | vless | @ServerNett | 3",
@@ -146,6 +147,7 @@
         "🇺🇸US | 🔴 | vless | @sinabigo | 9",
         "🇺🇸US | 🔴 | vless | @lrnbymaa | 9",
         "🇺🇸US | 🔴 | vless | @lrnbymaa | 10",
+        "🇷🇺RU | 🟢 | ss | @OutlineVpnOfficial | 17",
         "🇳🇱NL | 🟢 | ss | @OutlineVpnOfficial | 18",
         "🇺🇸US | 🔴 | vless | @proxystore11 | 2",
         "❔XX | 🔴 | vless | @proxystore11 | 3",
@@ -279,9 +281,11 @@
         "RELAY-104.19.46.233-0445 | 10.262MB",
         "🇨🇳TW-103.159.206.35-0808 | 9.55MB",
         "RELAY-104.19.32.46-0359 | 9.423MB",
+        "VN-103.75.187.178-0807 | 9.3MB",
         "🇭🇰HK-182.16.1.194-8027 | 9.258MB",
         "RELAY-104.16.148.244-0433 | 9.087MB",
         "RELAY-104.19.51.232-2681 | 8.922MB",
+        "VN-103.163.218.2-1024 | 8.647MB",
         "RELAY-172.67.177.124-1170 | 8.171MB",
         "RELAY-104.19.51.232-0229 | 8.107MB",
         "BA-185.164.35.9-0810 | 8.014MB",
@@ -289,6 +293,7 @@
         "🇨🇦CA-142.4.216.225-0788 | 7.369MB",
         "RELAY-104.19.38.62-0335 | 6.882MB",
         "🇺🇸US-45.158.171.141-0742 | 6.852MB",
+        "BY-45.87.219.110-0783 | 6.455MB",
         "🇺🇸US-45.158.171.138-0738 | 6.369MB",
         "RELAY-104.19.38.12-0311 | 5.878MB",
         "RELAY-104.16.60.8-0520 | 5.641MB",
@@ -317,6 +322,7 @@
         "RELAY-104.19.32.226-2709 | 3.94MB",
         "RELAY-104.19.123.31-2704 | 3.929MB",
         "RELAY-104.19.21.73-2703 | 3.897MB",
+        "TR-207.211.215.169-0832 | 3.897MB",
         "RELAY-172.64.99.32-2698 | 3.888MB",
         "RELAY-104.17.106.171-2714 | 3.885MB",
         "RELAY-172.64.99.32-0364 | 3.867MB",
@@ -1770,6 +1776,25 @@
     },
     {
       "type": "vless",
+      "tag": "🇷🇺RU | 🔴 | vless | @ShadowProxy66 | 16",
+      "server": "185.174.138.100",
+      "server_port": 8880,
+      "uuid": "82fdc77c-5def-4930-89a6-afb5cc609d4b",
+      "multiplex": {
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VPNPROXY?ed=8080",
+        "headers": {
+          "Host": "185.174.138.100"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
       "tag": "🇺🇸US | 🔴 | vless | @ShadowProxy66 | 17",
       "server": "cdn.discordapp.com",
       "server_port": 8880,
@@ -2164,6 +2189,14 @@
         }
       },
       "packet_encoding": "xudp"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇷🇺RU | 🟢 | ss | @OutlineVpnOfficial | 17",
+      "server": "45.139.24.63",
+      "server_port": 57456,
+      "method": "chacha20-ietf-poly1305",
+      "password": "3fbeb668f48414f6"
     },
     {
       "type": "shadowsocks",
@@ -4249,6 +4282,22 @@
     },
     {
       "type": "vmess",
+      "tag": "VN-103.75.187.178-0807 | 9.3MB",
+      "server": "103.75.187.178",
+      "server_port": 80,
+      "uuid": "9c1d4b35-955b-4b90-da34-d7db18b7f6d6",
+      "security": "auto",
+      "network": "tcp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "103.75.187.178"
+        }
+      }
+    },
+    {
+      "type": "vmess",
       "tag": "🇭🇰HK-182.16.1.194-8027 | 9.258MB",
       "server": "hrgdvpn.flycdnedc55.vip",
       "server_port": 80,
@@ -4301,6 +4350,15 @@
           "Host": "ip006.freegradely.xyz"
         }
       }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "VN-103.163.218.2-1024 | 8.647MB",
+      "server": "103.163.218.2",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3",
+      "network": "tcp"
     },
     {
       "type": "vmess",
@@ -4387,6 +4445,15 @@
       "server_port": 8080,
       "method": "chacha20-ietf-poly1305",
       "password": "a8bt9fY0QsLS6eLnXUe0Ym",
+      "network": "tcp"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "BY-45.87.219.110-0783 | 6.455MB",
+      "server": "45.87.219.110",
+      "server_port": 51348,
+      "method": "chacha20-ietf-poly1305",
+      "password": "F4fChWGojIcmxuMROuVQIQKGKRdg09vKfGp2STzSrdzrUSwZ",
       "network": "tcp"
     },
     {
@@ -4829,6 +4896,18 @@
         "headers": {
           "Host": "cdn3.freegradely.xyz"
         }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "TR-207.211.215.169-0832 | 3.897MB",
+      "server": "207.211.215.169",
+      "server_port": 43118,
+      "password": "ypDt8RkT7J",
+      "network": "tcp",
+      "tls": {
+        "enabled": true,
+        "server_name": "tpmwf.phooeyunfold.com"
       }
     },
     {
