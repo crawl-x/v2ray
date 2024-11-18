@@ -3702,6 +3702,9 @@
       {
         "clash_mode": "Direct",
         "outbound": "direct"
+      },
+      {
+        "action": "resolve"
       }
     ],
     "final": "default",
