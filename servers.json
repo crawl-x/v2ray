@@ -17704,7 +17704,6 @@
         "mode": "or",
         "rules": [
           {
-            "network": "udp",
             "port": 53
           },
           {
